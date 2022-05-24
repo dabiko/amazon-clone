@@ -5,46 +5,46 @@ import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 const Header = () => {
   return (
     <div className="header">
-        <img  className="amazon_logo" 
+        <img  className="amazon__logo" 
         src="../../images/Amazon-symbole.png" 
         alt="Logo here" />
 
-        <dev className="amazon_search">
-            <input className="amazon_searchInput" 
+        <div className="amazon__search">
+            <input className="amazon__searchInput" 
                    type="text" 
             />
-            <SearchIcon className="search_icon" />
-        </dev>
+            <SearchIcon className="search__icon" />
+        </div>
         
-        <div className="amazon_nav">
-             <div className="amazon_option">
-                 <span className="opntion_lineOne">
+        <div className="amazon__nav">
+             <div className="amazon__option">
+                 <span className="opntion__lineOne">
                      Hello Guest
                  </span>
-                 <span className="opntion_lineTwo">
+                 <span className="opntion__lineTwo">
                      Sign In
                  </span>
              </div>
-             <div className="amazon_option">
-                 <span className="opntion_lineOne">
+             <div className="amazon__option">
+                 <span className="opntion__lineOne">
                      Returns
                  </span>
-                 <span className="opntion_lineTwo">
+                 <span className="opntion__lineTwo">
                      & Orders
                  </span>
              </div>
-             <div className="amazon_option">
+             <div className="amazon__option">
                  <span className="opntion_lineOne">
                      You
                  </span>
-                 <span className="opntion_lineTwo">
+                 <span className="opntion__lineTwo">
                      Prime
                  </span>
              </div>  
 
-             <div className="amazon_basket">
+             <div className="amazon__basket">
                  <ShoppingBasketIcon />
-                 <span className="opntion_lineTwo cartCount">0</span>
+                 <span className="opntion__lineTwo cartCount">0</span>
              </div>            
         </div>
     </div>
