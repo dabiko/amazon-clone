@@ -4,6 +4,7 @@ import Home from './components/Home/Home';
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Checkout from './components/Checkout/Checkout';
 import Page404 from './components/Page404/Page404';
+import Login from './components/Login/Login';
 
 
 
@@ -12,11 +13,10 @@ function App() {
     // BEM
     <Router>
         <div className="app">
-        <Header />
           <Routes>
-                <Route path="/login" element={ <h1>Login Page</h1>} />
-                <Route path="/" element={ <Home /> } />
-                <Route path="/checkout" element={ <Checkout /> } />
+                <Route path="/login" element={ <Login />} />
+                <Route path="/" element={<><Header /> <Home /> </>} />
+                <Route path="/checkout" element={<><Header /> <Checkout /> </>} />
                 <Route path="*" element={ <Page404 /> } />
           </Routes>
           

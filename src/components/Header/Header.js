@@ -31,7 +31,7 @@ function Header ()  {
                      Hello Guest
                  </span>
                  <span className="opntion__lineTwo">
-                     Sign In
+                     <Link className="login__link" to='/login'>Sign In</Link>
                  </span>
              </div>
              <div className="amazon__option">

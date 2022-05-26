@@ -49,6 +49,11 @@
     font-weight: 700;
 }
 
+.login__link >{
+    font-size: 40px;
+    font-weight: 700;
+}
+
 .amazon__option{
     display: flex;
     flex-direction: column;
