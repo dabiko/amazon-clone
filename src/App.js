@@ -14,6 +14,7 @@ function App() {
         <div className="app">
         <Header />
           <Routes>
+                <Route path="/login" element={ <h1>Login Page</h1>} />
                 <Route path="/" element={ <Home /> } />
                 <Route path="/checkout" element={ <Checkout /> } />
                 <Route path="*" element={ <Page404 /> } />
