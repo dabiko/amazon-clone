@@ -15,14 +15,14 @@ const Home = () => {
                 <Product
                    id="64039846"
                    title="The lean startup"
-                   price={23.000}
+                   price={23000}
                    image="../../images/lean-startup.png"
                    rating={5}
                 />
                 <Product 
                   id="98319965"
                   title="Sunny-day sandals at Shopbop"
-                  price={5.000}
+                  price={5000}
                   image="../../images/sunny_day.jpg"
                   rating={3}
                 />
@@ -31,21 +31,21 @@ const Home = () => {
                 <Product 
                   id="09491685"
                   title="Deal of the Day"
-                  price={15.000}
+                  price={15000}
                   image="../../images/dod_deals.jpg"
                   rating={2}
                 />
                 <Product
                   id="72370523" 
                   title="New World by Amazon Games"
-                  price={29.000}
+                  price={29000}
                   image="../../images/amazon_games.jpg"
                   rating={4}               
                 />
                 <Product 
                   id="19225025"
                   title="Save on Renewed home and kitchen"
-                  price={9.000}
+                  price={9000}
                   image="../../images/kitchen.jpg"
                   rating={3}
                 />
@@ -54,7 +54,7 @@ const Home = () => {
                 <Product
                   id="42982451" 
                   title="Bundle up with the basics"
-                  price={12.000}
+                  price={12000}
                   image="../../images/package_deals.jpg"
                   rating={4}
                 />
