@@ -8,12 +8,14 @@ import Page404 from './components/Page404/Page404';
 import Login from './components/Login/Login';
 import { useStateValue } from './components/StateProvider';
 import { auth } from './firebase';
+import Payment from './components/Payment/Payment';
 
 
 
 
 function App() {
-  const [, dispatch ] = useStateValue();
+  // eslint-disable-next-line no-empty-pattern
+  const [{}, dispatch ] = useStateValue();
 
   useEffect(() => {
     auth.onAuthStateChanged((authUser) => {
@@ -32,6 +34,7 @@ function App() {
         });
       }
     })
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -42,6 +45,7 @@ function App() {
                 <Route path="/login" element={ <Login />} />
                 <Route path="/" element={<><Header /> <Home /> </>} />
                 <Route path="/checkout" element={<><Header /> <Checkout /> </>} />
+                <Route path="/payment" element={<><Header /> <Payment /> </>} />
                 <Route path="*" element={ <Page404 /> } />
           </Routes>
           

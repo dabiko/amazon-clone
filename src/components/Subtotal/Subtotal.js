@@ -3,10 +3,13 @@ import CurrencyFormat from 'react-currency-format'
 import './subtotal.css'
 import { useStateValue } from '../StateProvider';
 import { getBasketTotal } from '../reducer';
+import { useNavigate } from 'react-router-dom';
 
 
 function Subtotal() {
-  const [{ basket}, dispatch] = useStateValue();
+  const [{ basket}] = useStateValue();
+  const navigate  = useNavigate();
+
     return <div className="subtitle">
          <CurrencyFormat
            renderText={(value) =>(
@@ -27,7 +30,7 @@ function Subtotal() {
            thousandSeparator={true}
            prefix={"FCFA"}
          />
-         <button>Proceed to Checkout</button>
+         <button onClick={e => navigate('/payment')}>Proceed to Checkout</button>
     </div>;
 }
 

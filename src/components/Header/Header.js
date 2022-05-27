@@ -8,7 +8,7 @@ import { auth } from '../../firebase';
 
 
 function Header ()  {
-    const [{ basket, user }, dispatch] = useStateValue();
+    const [{ basket, user }] = useStateValue();
     const handleAuthentication = () => {
         if(user){
             auth.signOut();
@@ -19,7 +19,7 @@ function Header ()  {
     <div className="header">
         <Link to='/'>
         <img className="amazon__logo" 
-            src="../../images/Amazon-symbole.png" 
+            src="../../images/amazon_symbole.png" 
             alt="Logo here" /> 
         </Link>
        
