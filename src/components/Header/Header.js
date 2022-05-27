@@ -4,17 +4,24 @@ import SearchIcon from '@material-ui/icons/Search';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import { Link } from 'react-router-dom';
 import { useStateValue } from '../StateProvider';
+import { auth } from '../../firebase';
 
 
 function Header ()  {
-    const [{ basket}, dispatch] = useStateValue();
+    const [{ basket, user }, dispatch] = useStateValue();
+    const handleAuthentication = () => {
+        if(user){
+            auth.signOut();
+        }
+    }
+
   return (
     <div className="header">
-        <Link to='/'>Home</Link>
+        <Link to='/'>
         <img className="amazon__logo" 
             src="../../images/Amazon-symbole.png" 
             alt="Logo here" /> 
-        
+        </Link>
        
               
 
@@ -26,14 +33,16 @@ function Header ()  {
         </div>
         
         <div className="amazon__nav">
-             <div className="amazon__option">
-                 <span className="opntion__lineOne">
-                     Hello Guest
-                 </span>
-                 <span className="opntion__lineTwo">
-                     <Link className="login__link" to='/login'>Sign In</Link>
-                 </span>
-             </div>
+            <Link to={!user && '/login'}>
+                <div  onClick={handleAuthentication} className="amazon__option">
+                    <span className="opntion__lineOne">
+                        Hello Guest
+                    </span>
+                    <span className="opntion__lineTwo">          
+                          {user ? user.email : 'Sign In'} 
+                    </span>
+                </div>
+             </Link>
              <div className="amazon__option">
                  <span className="opntion__lineOne">
                      Returns
@@ -50,14 +59,14 @@ function Header ()  {
                      Prime
                  </span>
              </div>  
-             <Link to='/checkout'>cc</Link>
+             <Link to='/checkout'>
                 <div className="amazon__basket">
                         <ShoppingBasketIcon />
                         <span className="opntion__lineTwo cartCount">
                             {basket?.length}
                         </span>
                 </div>
-                         
+             </Link>          
         </div>
     </div>
   );
