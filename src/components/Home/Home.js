@@ -15,14 +15,14 @@ function Home () {
                 <Product
                    id="64039846"
                    title="The lean startup"
-                   price={23000}
+                   price={230.99}
                    image="../../images/lean-startup.png"
                    rating={5}
                 />
                 <Product 
                   id="98319965"
                   title="Sunny-day sandals at Shopbop"
-                  price={5000}
+                  price={500.49}
                   image="../../images/sunny_day.jpg"
                   rating={3}
                 />
@@ -31,21 +31,21 @@ function Home () {
                 <Product 
                   id="09491685"
                   title="Deal of the Day"
-                  price={15000}
+                  price={150.69}
                   image="../../images/dod_deals.jpg"
                   rating={2}
                 />
                 <Product
                   id="72370523" 
                   title="New World by Amazon Games"
-                  price={29000}
+                  price={290.89}
                   image="../../images/amazon_games.jpg"
                   rating={4}               
                 />
                 <Product 
                   id="19225025"
                   title="Save on Renewed home and kitchen"
-                  price={9000}
+                  price={90.59}
                   image="../../images/kitchen.jpg"
                   rating={3}
                 />
@@ -54,7 +54,7 @@ function Home () {
                 <Product
                   id="42982451" 
                   title="Bundle up with the basics"
-                  price={12000}
+                  price={120.00}
                   image="../../images/package_deals.jpg"
                   rating={4}
                 />

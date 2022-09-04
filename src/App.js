@@ -9,7 +9,11 @@ import Login from './components/Login/Login';
 import { useStateValue } from './components/StateProvider';
 import { auth } from './firebase';
 import Payment from './components/Payment/Payment';
+import { loadStripe } from '@stripe/stripe-js';
+import { Elements } from '@stripe/react-stripe-js'
+import Orders from './components/Orders/Orders';
 
+const promise =  loadStripe('pk_test_51L40a1JKeAGt7TbFUGoIgBrUmlo9S2Vh3Wpu8aGHNMfEyz31KZvNn9n5r8kfCVh7mqE9JDL8zHyyLcoCK5xnEalH00xXkdKqop');
 
 
 
@@ -38,14 +42,22 @@ function App() {
   }, []);
 
   return (
-    // BEM
     <Router>
         <div className="app">
           <Routes>
+                <Route path="/orders" element={<> <Header /> <Orders /> </> } />
                 <Route path="/login" element={ <Login />} />
-                <Route path="/" element={<><Header /> <Home /> </>} />
-                <Route path="/checkout" element={<><Header /> <Checkout /> </>} />
-                <Route path="/payment" element={<><Header /> <Payment /> </>} />
+                <Route path="/" element={<> <Header /> <Home /> </>} />
+                <Route path="/checkout" element={<> <Header /> <Checkout /> </>} />
+                <Route path="/payment" element={
+                  <>
+                    <Header /> 
+                    <Elements stripe={promise}>
+                      <Payment /> 
+                    </Elements>
+                  </>
+                    } 
+                />
                 <Route path="*" element={ <Page404 /> } />
           </Routes>
           
